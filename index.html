@@ -43,11 +43,11 @@
         .btn:active {
             opacity: 0.8;
         }
-        .red-btn {
-            background-color: #ff3b30;
-        }
         .green-btn {
             background-color: #34c759;
+        }
+        .red-btn {
+            background-color: #ff3b30;
         }
         .subtext {
             font-size: 1rem;
@@ -85,13 +85,13 @@
 
     <!-- Selection Screen -->
     <div id="mainMenu" class="menu">
-        <div class="btn red-btn" onclick="showAlert('#ff3b30')">
-            Sarcasm
-            <span class="subtext">(Not Joking / Dead Serious)</span>
-        </div>
         <div class="btn green-btn" onclick="showAlert('#34c759')">
+            Joking
+            <span class="subtext">(Sarcasm / Everything is fine)</span>
+        </div>
+        <div class="btn red-btn" onclick="showAlert('#ff3b30')">
             Serious
-            <span class="subtext">(Actually Joking / Sarcastic)</span>
+            <span class="subtext">(Not Joking / Dead Serious)</span>
         </div>
     </div>
 
@@ -115,6 +115,7 @@
 
         function resetApp() {
             overlay.style.display = 'none';
+            menu.style.gridTemplateRows = '1fr 1fr'; // Ensure layout stays stable
             menu.style.display = 'grid';
             
             // Exit full screen if we entered it
